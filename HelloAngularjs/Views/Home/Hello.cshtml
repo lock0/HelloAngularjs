@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Hello";
+    Layout = "~/Views/Shared/_EmptyLayout.cshtml";
+}
+<script src="//cdn.bootcss.com/angular.js/1.4.3/angular.min.js"></script>
+<script src="~/Scripts/controllers/controller.js"></script>
+
+
+
+ <div ng-controller="PhoneListCtrl" ng-app="phonecatApp">
+     Search: <input ng-model="query">
+    <ul>
+        <li ng-repeat="phone in phones | filter:query">
+            {{phone.Name}}
+            <p>{{phone.Code}}</p>
+        </li>
+    </ul>
+</div>
